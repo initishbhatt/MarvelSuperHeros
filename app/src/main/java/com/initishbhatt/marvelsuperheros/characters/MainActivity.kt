@@ -1,21 +1,40 @@
 package com.initishbhatt.marvelsuperheros.characters
 
+import android.arch.lifecycle.Observer
+import android.arch.lifecycle.ViewModelProviders
+import android.databinding.DataBindingUtil
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
-import android.view.Menu
+import android.support.v7.widget.GridLayoutManager
 import com.initishbhatt.marvelsuperheros.R
+import com.initishbhatt.marvelsuperheros.characters.model.MarvelSuperHeroes
+import com.initishbhatt.marvelsuperheros.databinding.ActivityMainBinding
+import dagger.android.support.DaggerAppCompatActivity
+import timber.log.Timber
+import javax.inject.Inject
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : DaggerAppCompatActivity() {
+    lateinit var binding: ActivityMainBinding
+    @Inject
+    lateinit var mainViewModelFactory: MainViewModelFactory
+    lateinit var mainViewModel: MainViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-    }
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
 
-    override fun onCreateOptionsMenu(menu: Menu): Boolean {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        menuInflater.inflate(R.menu.menu_main, menu)
-        return true
-    }
+        binding.rvHeros.layoutManager = GridLayoutManager(this, 1)
+        binding.rvHeros.setHasFixedSize(true)
+        mainViewModel = ViewModelProviders.of(this,mainViewModelFactory).get(MainViewModel::class.java)
+        val superHeroAdapter = SuperHeroAdapter(ArrayList())
+        binding.rvHeros.adapter = superHeroAdapter
 
+        mainViewModel.herosData.observe(this, Observer<List<MarvelSuperHeroes>> {
+            if (it == null || it.isEmpty())
+                Timber.e("no data")
+            else {
+                superHeroAdapter.replaceData(it)
+            }
+        })
+        mainViewModel.showAllSuperHeros()
+    }
 }

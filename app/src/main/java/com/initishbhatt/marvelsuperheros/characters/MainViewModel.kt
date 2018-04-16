@@ -16,7 +16,7 @@ import timber.log.Timber
 class MainViewModel(private val interactor: MarvelInteractor,
                     private val schedulerProvider: SchedulerProvider) : ViewModel() {
     private val compositeDisposable by lazy { CompositeDisposable() }
-    private val herosData: MutableLiveData<List<MarvelSuperHeroes>> = MutableLiveData()
+    val herosData: MutableLiveData<List<MarvelSuperHeroes>> = MutableLiveData()
     private val loading: MutableLiveData<Boolean> = MutableLiveData()
 
     fun showAllSuperHeros() {
