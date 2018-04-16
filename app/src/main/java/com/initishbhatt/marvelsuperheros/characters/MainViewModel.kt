@@ -2,6 +2,7 @@ package com.initishbhatt.marvelsuperheros.characters
 
 import android.arch.lifecycle.MutableLiveData
 import android.arch.lifecycle.ViewModel
+import android.databinding.ObservableField
 import com.initishbhatt.marvelsuperheros.characters.model.MarvelSuperHeroes
 import com.initishbhatt.marvelsuperheros.interactor.MarvelInteractor
 import com.initishbhatt.marvelsuperheros.util.SchedulerProvider
@@ -16,10 +17,11 @@ import timber.log.Timber
 class MainViewModel(private val interactor: MarvelInteractor,
                     private val schedulerProvider: SchedulerProvider) : ViewModel() {
     private val compositeDisposable by lazy { CompositeDisposable() }
-    val herosData: MutableLiveData<List<MarvelSuperHeroes>> = MutableLiveData()
-    private val loading: MutableLiveData<Boolean> = MutableLiveData()
+    val herosData = MutableLiveData<List<MarvelSuperHeroes>>()
+    val isLoading = ObservableField<Boolean>()
 
     fun showAllSuperHeros() {
+        isLoading.set(true)
         compositeDisposable.add(superHerosList())
     }
 
@@ -35,11 +37,13 @@ class MainViewModel(private val interactor: MarvelInteractor,
     }
 
     private fun onHerosListReceivedError(it: Throwable) {
+        isLoading.set(false)
         herosData.postValue(null)
         Timber.e(it)
     }
 
     private fun onHerosListReceived(it: List<MarvelSuperHeroes>) {
+        isLoading.set(false)
         herosData.postValue(it)
     }
 

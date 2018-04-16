@@ -16,8 +16,8 @@ class SuperHeroAdapter(private var heros: List<MarvelSuperHeroes>) : RecyclerVie
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CharacterViewHolder {
         val layoutInflater = LayoutInflater.from(parent.context)
-        val itemPersonBinding = DataBindingUtil.inflate<ItemHerosBinding>(layoutInflater, R.layout.item_heros, parent, false)
-        return CharacterViewHolder(itemPersonBinding)
+        val itemHerosBinding = DataBindingUtil.inflate<ItemHerosBinding>(layoutInflater, R.layout.item_heros, parent, false)
+        return CharacterViewHolder(itemHerosBinding)
     }
 
     override fun onBindViewHolder(holder: CharacterViewHolder, position: Int) {
