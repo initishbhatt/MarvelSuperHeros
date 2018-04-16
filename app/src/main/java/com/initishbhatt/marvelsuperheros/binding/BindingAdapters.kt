@@ -5,19 +5,15 @@ import android.databinding.BindingConversion
 import android.view.View
 import android.widget.ImageView
 import com.squareup.picasso.Picasso
-import javax.inject.Singleton
 
 /**
  * @author nitishbhatt
  */
 
-@Singleton
-class BindingAdapters {
 
-    @BindingAdapter("android:src")
-    fun setImageUrl(view: ImageView, url: String) {
-        Picasso.with(view.context).load(url).into(view)
-    }
+@BindingAdapter("android:src")
+fun setImageUrl(view: ImageView, url: String) {
+    Picasso.with(view.context).load(url).into(view)
 }
 
 @BindingConversion
