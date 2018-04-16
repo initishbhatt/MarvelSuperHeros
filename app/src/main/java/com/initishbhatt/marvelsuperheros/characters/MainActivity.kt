@@ -22,6 +22,7 @@ class MainActivity : DaggerAppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
         mainViewModel = ViewModelProviders.of(this,mainViewModelFactory).get(MainViewModel::class.java)
+        binding.viewModel = mainViewModel
         binding.rvHeros.layoutManager = GridLayoutManager(this, 1)
         binding.rvHeros.setHasFixedSize(true)
         val superHeroAdapter = SuperHeroAdapter(ArrayList<MarvelSuperHeroes>())
