@@ -13,19 +13,18 @@ import timber.log.Timber
 import javax.inject.Inject
 
 class MainActivity : DaggerAppCompatActivity() {
-    lateinit var binding: ActivityMainBinding
+    private lateinit var binding: ActivityMainBinding
     @Inject
     lateinit var mainViewModelFactory: MainViewModelFactory
-    lateinit var mainViewModel: MainViewModel
+    private lateinit var mainViewModel: MainViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
-
+        mainViewModel = ViewModelProviders.of(this,mainViewModelFactory).get(MainViewModel::class.java)
         binding.rvHeros.layoutManager = GridLayoutManager(this, 1)
         binding.rvHeros.setHasFixedSize(true)
-        mainViewModel = ViewModelProviders.of(this,mainViewModelFactory).get(MainViewModel::class.java)
-        val superHeroAdapter = SuperHeroAdapter(ArrayList())
+        val superHeroAdapter = SuperHeroAdapter(ArrayList<MarvelSuperHeroes>())
         binding.rvHeros.adapter = superHeroAdapter
 
         mainViewModel.herosData.observe(this, Observer<List<MarvelSuperHeroes>> {
