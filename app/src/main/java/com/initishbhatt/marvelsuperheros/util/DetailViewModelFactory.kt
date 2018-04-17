@@ -3,7 +3,7 @@ package com.initishbhatt.marvelsuperheros.util
 import android.arch.lifecycle.ViewModel
 import android.arch.lifecycle.ViewModelProvider
 import com.initishbhatt.marvelsuperheros.characters.model.MarvelSuperHeroes
-import com.initishbhatt.marvelsuperheros.detail.DetailViewModel
+import com.initishbhatt.marvelsuperheros.detail.presentation.viewModel.DetailViewModel
 
 @Suppress("UNCHECKED_CAST")
 /**

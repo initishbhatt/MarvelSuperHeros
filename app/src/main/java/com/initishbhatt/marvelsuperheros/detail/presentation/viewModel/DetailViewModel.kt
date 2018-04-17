@@ -1,4 +1,4 @@
-package com.initishbhatt.marvelsuperheros.detail
+package com.initishbhatt.marvelsuperheros.detail.presentation.viewModel
 
 import android.arch.lifecycle.ViewModel
 import android.databinding.ObservableField

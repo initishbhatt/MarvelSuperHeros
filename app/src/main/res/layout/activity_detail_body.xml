@@ -7,7 +7,7 @@
 
         <variable
             name="detailViewModel"
-            type="com.initishbhatt.marvelsuperheros.detail.DetailViewModel" />
+            type="com.initishbhatt.marvelsuperheros.detail.presentation.viewModel.DetailViewModel" />
     </data>
 
     <android.support.v4.widget.NestedScrollView

@@ -6,7 +6,7 @@ import android.databinding.BaseObservable
 import android.databinding.ObservableField
 import android.view.View
 import com.initishbhatt.marvelsuperheros.characters.model.MarvelSuperHeroes
-import com.initishbhatt.marvelsuperheros.detail.DetailActivity
+import com.initishbhatt.marvelsuperheros.detail.presentation.ui.DetailActivity
 
 /**
  * @author nitishbhatt

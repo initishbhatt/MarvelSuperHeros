@@ -19,7 +19,7 @@ interface Mapper<in I, out O> {
     fun map(input: I): O
 }
 
-class CharacterMapper
+class SuperHeroMapper
 @Inject constructor() : Mapper<AllCharactersModel, MarvelSuperHeroes> {
 
     override fun map(input: AllCharactersModel): MarvelSuperHeroes {

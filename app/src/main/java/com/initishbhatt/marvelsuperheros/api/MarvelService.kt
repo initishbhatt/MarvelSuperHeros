@@ -19,6 +19,5 @@ interface MarvelService {
     @GET("characters")
     fun getCharacters(@Query(HASH) md5Digest: String,
                       @Query(TIMESTAMP) timestamp: Long,
-                      @Query(OFFSET) offset: Int?,
-                      @Query(LIMIT) limit: Int?): Single<DataWrapper<List<AllCharactersModel>>>
+                      @Query(OFFSET) offset: Int?): Single<DataWrapper<List<AllCharactersModel>>>
 }

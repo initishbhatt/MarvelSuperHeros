@@ -14,8 +14,4 @@ class MainActivityModule {
     @Provides
     fun provideViewModelFactory(interactor: MarvelInteractor, schedulerProvider: SchedulerProvider) =
             MainViewModelFactory(interactor, schedulerProvider)
-
-   /* @Provides
-    fun provideDetailViewModelFactory(superHeroes: MarvelSuperHeroes) =
-            DetailViewModelFactory(superHeroes)*/
 }

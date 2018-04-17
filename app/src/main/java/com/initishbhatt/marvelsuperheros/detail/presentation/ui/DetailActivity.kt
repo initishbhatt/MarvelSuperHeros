@@ -1,4 +1,4 @@
-package com.initishbhatt.marvelsuperheros.detail
+package com.initishbhatt.marvelsuperheros.detail.presentation.ui
 
 import android.arch.lifecycle.ViewModelProviders
 import android.databinding.DataBindingUtil
@@ -7,16 +7,18 @@ import android.support.v7.app.AppCompatActivity
 import com.initishbhatt.marvelsuperheros.R
 import com.initishbhatt.marvelsuperheros.characters.model.MarvelSuperHeroes
 import com.initishbhatt.marvelsuperheros.databinding.ActivityDetailBinding
+import com.initishbhatt.marvelsuperheros.detail.presentation.viewModel.DetailViewModel
 import com.initishbhatt.marvelsuperheros.util.DetailViewModelFactory
 
 /**
  * @author nitishbhatt
  */
 class DetailActivity : AppCompatActivity() {
+
     private lateinit var binding: ActivityDetailBinding
-    /* @Inject */
     private lateinit var detailViewModelFactory: DetailViewModelFactory
     private lateinit var detailViewModel: DetailViewModel
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_detail)
