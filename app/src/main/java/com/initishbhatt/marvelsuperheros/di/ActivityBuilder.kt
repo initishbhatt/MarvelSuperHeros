@@ -1,7 +1,7 @@
 package com.initishbhatt.marvelsuperheros.di
 
-import com.initishbhatt.marvelsuperheros.characters.MainActivity
 import com.initishbhatt.marvelsuperheros.characters.di.MainActivityModule
+import com.initishbhatt.marvelsuperheros.characters.presentation.ui.MainActivity
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
 

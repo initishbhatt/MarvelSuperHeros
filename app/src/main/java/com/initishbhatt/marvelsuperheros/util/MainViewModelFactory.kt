@@ -1,10 +1,11 @@
-package com.initishbhatt.marvelsuperheros.characters
+package com.initishbhatt.marvelsuperheros.util
 
 import android.arch.lifecycle.ViewModel
 import android.arch.lifecycle.ViewModelProvider
+import com.initishbhatt.marvelsuperheros.characters.presentation.viewModel.MainViewModel
 import com.initishbhatt.marvelsuperheros.interactor.MarvelInteractor
-import com.initishbhatt.marvelsuperheros.util.SchedulerProvider
 
+@Suppress("UNCHECKED_CAST")
 /**
  * @author nitishbhatt
  */

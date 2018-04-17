@@ -1,4 +1,4 @@
-package com.initishbhatt.marvelsuperheros.characters
+package com.initishbhatt.marvelsuperheros.characters.presentation.viewModel
 
 import android.arch.lifecycle.MutableLiveData
 import android.arch.lifecycle.ViewModel

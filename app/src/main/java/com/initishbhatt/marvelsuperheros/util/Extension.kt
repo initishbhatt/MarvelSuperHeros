@@ -7,6 +7,7 @@ import dagger.android.support.DaggerAppCompatActivity
 
 /**
  * @author nitishbhatt
+ * for fragment transactions(TBD: use in future expansion)
  */
 inline fun FragmentManager.inTransaction(func: FragmentTransaction.() -> FragmentTransaction) {
     beginTransaction().func().commit()

@@ -1,15 +1,14 @@
-package com.initishbhatt.marvelsuperheros.characters.item
+package com.initishbhatt.marvelsuperheros.detail.presentation.viewModel
 
-import android.databinding.BaseObservable
+import android.arch.lifecycle.ViewModel
 import android.databinding.ObservableField
 import com.initishbhatt.marvelsuperheros.characters.model.MarvelSuperHeroes
 
 /**
  * @author nitishbhatt
  */
-class CharacterViewModel(var superHero: MarvelSuperHeroes) : BaseObservable() {
+class DetailViewModel(var superHero: MarvelSuperHeroes) : ViewModel() {
 
-    val id: ObservableField<String> = ObservableField(superHero.id.toString())
     val name: ObservableField<String> = ObservableField(superHero.name)
     val description: ObservableField<String> = ObservableField(superHero.description)
     val imageUrl: ObservableField<String> = ObservableField(superHero.imageUrl)
