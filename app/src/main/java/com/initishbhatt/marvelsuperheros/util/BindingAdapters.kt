@@ -1,4 +1,4 @@
-package com.initishbhatt.marvelsuperheros.binding
+package com.initishbhatt.marvelsuperheros.util
 
 import android.databinding.BindingAdapter
 import android.databinding.BindingConversion
