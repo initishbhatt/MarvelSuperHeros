@@ -1,11 +1,11 @@
-package com.initishbhatt.marvelsuperheros.characters
+package com.initishbhatt.marvelsuperheros.characters.presentation.ui
 
 import android.databinding.DataBindingUtil
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import com.initishbhatt.marvelsuperheros.R
-import com.initishbhatt.marvelsuperheros.characters.item.CharacterViewHolder
+import com.initishbhatt.marvelsuperheros.characters.presentation.item.CharacterViewHolder
 import com.initishbhatt.marvelsuperheros.characters.model.MarvelSuperHeroes
 import com.initishbhatt.marvelsuperheros.databinding.ItemHerosBinding
 
