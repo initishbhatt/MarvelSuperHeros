@@ -1,6 +1,7 @@
 package com.initishbhatt.marvelsuperheros.characters.model
 
 import com.initishbhatt.marvelsuperheros.api.model.AllCharactersModel
+import java.io.Serializable
 import javax.inject.Inject
 
 /**
@@ -11,7 +12,7 @@ data class MarvelSuperHeroes(
         val name: String,
         val description: String,
         val imageUrl: String
-)
+) : Serializable
 
 interface Mapper<in I, out O> {
 

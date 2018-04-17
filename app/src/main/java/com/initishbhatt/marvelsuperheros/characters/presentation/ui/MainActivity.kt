@@ -1,4 +1,4 @@
-package com.initishbhatt.marvelsuperheros.characters
+package com.initishbhatt.marvelsuperheros.characters.presentation.ui
 
 import android.arch.lifecycle.Observer
 import android.arch.lifecycle.ViewModelProviders
@@ -7,7 +7,9 @@ import android.os.Bundle
 import android.support.v7.widget.GridLayoutManager
 import com.initishbhatt.marvelsuperheros.R
 import com.initishbhatt.marvelsuperheros.characters.model.MarvelSuperHeroes
+import com.initishbhatt.marvelsuperheros.characters.presentation.viewModel.MainViewModel
 import com.initishbhatt.marvelsuperheros.databinding.ActivityMainBinding
+import com.initishbhatt.marvelsuperheros.util.MainViewModelFactory
 import dagger.android.support.DaggerAppCompatActivity
 import timber.log.Timber
 import javax.inject.Inject
@@ -21,7 +23,7 @@ class MainActivity : DaggerAppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
-        mainViewModel = ViewModelProviders.of(this,mainViewModelFactory).get(MainViewModel::class.java)
+        mainViewModel = ViewModelProviders.of(this, mainViewModelFactory).get(MainViewModel::class.java)
         binding.viewModel = mainViewModel
         binding.rvHeros.layoutManager = GridLayoutManager(this, 1)
         binding.rvHeros.setHasFixedSize(true)

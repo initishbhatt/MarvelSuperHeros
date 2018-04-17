@@ -6,7 +6,7 @@
 
         <variable
             name="viewModel"
-            type="com.initishbhatt.marvelsuperheros.characters.MainViewModel" />
+            type="com.initishbhatt.marvelsuperheros.characters.presentation.viewModel.MainViewModel" />
     </data>
 
 

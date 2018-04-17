@@ -7,12 +7,13 @@
 
         <variable
             name="viewModel"
-            type="com.initishbhatt.marvelsuperheros.characters.item.CharacterViewModel" />
+            type="com.initishbhatt.marvelsuperheros.characters.presentation.item.CharacterViewModel" />
     </data>
 
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:onClick="@{viewModel::onClick}"
         android:padding="16dp">
 
         <ImageView
