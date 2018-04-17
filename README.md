@@ -27,8 +27,8 @@ The application displays a list of Marvel Characters from a [Marvel API](https:/
 ## ScreenShots
 
 
-## Want to contribute ?
-Feel free to report or add any useful feature, I will be glad to improve it -with your help-.
+## Contributions ?
+This Application is open for any feedback and contributions :)
 
 # License
 ```
