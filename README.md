@@ -1,3 +1,4 @@
+![license](https://img.shields.io/badge/license-MIT%20License-blue.svg)
 # MarvelSuperHeros
 ![alt text](https://github.com/initishbhatt/MarvelSuperHeros/blob/dev/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png)
 
@@ -26,7 +27,7 @@ The application displays a list of Marvel Characters from a [Marvel API](https:/
 
 ## ScreenShots
 
-## Contributions ?
+## Contributions 
 Contributions are always welcome!
 
 Follow the "fork-and-pull" Git workflow.
